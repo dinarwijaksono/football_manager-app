@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth_controller;
+use App\Http\Controllers\Home_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Home_controller
+Route::get('/', [Home_controller::class, 'index'])->middleware('auth');
+/* end Home_controller */
+
+
+/* auth_controller */
+Route::get('/Auth/login', [Auth_controller::class, 'login'])->name('login')->middleware('guest');
+/* end auth_controler */
