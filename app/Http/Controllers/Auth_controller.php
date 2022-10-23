@@ -76,7 +76,12 @@ class Auth_controller extends Controller
     }
 
 
+    public function nextDay()
+    {
+        $this->user_service->updateDate(auth()->user()->id);
 
+        return redirect('/');
+    }
 
 
     public function logout(Request $request)

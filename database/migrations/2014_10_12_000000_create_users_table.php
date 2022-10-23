@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('club_id');
             $table->string('password');
             $table->rememberToken();
+            $table->bigInteger('date_run');
             $table->bigInteger('created_at');
             $table->bigInteger('updated_at');
         });

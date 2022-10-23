@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'alexbeth664@gmail.com',
             'password' => Hash::make('damayanti'),
             'club_id' => 1,
+            'date_run' => round(microtime(true) * 1000),
             'created_at' => round(microtime(true) * 1000),
             'updated_at' => round(microtime(true) * 1000),
         ]);
