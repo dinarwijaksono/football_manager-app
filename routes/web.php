@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth_controller;
+use App\Http\Controllers\Club_controller;
 use App\Http\Controllers\Home_controller;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,11 @@ Route::post('/Auth/register', [Auth_controller::class, 'doRegister'])->middlewar
 
 Route::post('/Auth/logout', [Auth_controller::class, 'logout'])->middleware('auth');
 /* end auth_controler */
+
+
+
+/* Club_controller */
+Route::get('/Club', [Club_controller::class, 'index'])->middleware('auth');
+
+Route::get('/Club/tim', [Club_controller::class, 'tim'])->middleware('auth');
+/* end Club_controller */
