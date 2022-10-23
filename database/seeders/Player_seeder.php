@@ -27,9 +27,9 @@ class Player_seeder extends Seeder
                     'name' => Fake()->firstName('male') . " " . Fake()->lastName('male'),
                     'position' => $position[mt_rand(0, 7)],
                     'salary' => 2_000_000,
-                    'birth_date' => round(microtime(true) * 1000),
+                    'birth_date' => floor(microtime(true) * 1000) - (mt_rand(17, 20) * 365 * 24 * 60 * 60 * 1000),
                     'price' => 5_000_000,
-                    'end_contract' => round(microtime(true) * 1000),
+                    'end_contract' => round(microtime(true) * 1000) + (mt_rand(1, 3) * 365 * 24 * 60 * 60 * 1000),
                 ]);
             }
         }

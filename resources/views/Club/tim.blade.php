@@ -25,47 +25,27 @@
                             <th class="text-center">No</th>
                             <th class="text-center">Nama</th>
                             <th class="text-center">Umur</th>
+                            <th class="text-center">Kontak berakahir</th>
                             <th class="text-center">Posisi</th>
                             <th class="text-center">Keahlian</th>
                             <th class="text-center">Gaji</th>
                         </tr>
 
                         <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td><a href="">Dinar wijaksono</a></td>
-                                <td class="text-center">23</td>
-                                <td class="text-center"><span class="badge bg-light-blue">GK</span></td>
-                                <td class="text-center">77</td>
-                                <td class="text-right">2.000.000</td>
-                            </tr>
 
+                            <?php $index = 1; ?>
+                            @foreach ($listPlayers as $player)
                             <tr>
-                                <td class="text-center">2</td>
-                                <td><a href="">Dinar wijaksono</a></td>
-                                <td class="text-center">23</td>
-                                <td class="text-center"><span class="badge bg-light-blue">GK</span></td>
+                                <td class="text-center">{{ $index ++ }}</td>
+                                <td><a href="">{{ $player['name'] }}</a></td>
+                                <td class="text-center">{{ $player['age'] }}</td>
+                                <td class="text-center">{{ $player['end_contract'] }}</td>
+                                <td class="text-center"><span class="badge bg-light-blue">{{ $player['position'] }}</span></td>
                                 <td class="text-center">77</td>
-                                <td class="text-right">2.000.000</td>
+                                <td class="text-right"><?= number_format($player['salary']) ?></td>
                             </tr>
+                            @endforeach
 
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td><a href="">Dinar wijaksono</a></td>
-                                <td class="text-center">23</td>
-                                <td class="text-center"><span class="badge bg-light-blue">GK</span></td>
-                                <td class="text-center">77</td>
-                                <td class="text-right">2.000.000</td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td><a href="">Dinar wijaksono</a></td>
-                                <td class="text-center">23</td>
-                                <td class="text-center"><span class="badge bg-light-blue">GK</span></td>
-                                <td class="text-center">77</td>
-                                <td class="text-right">2.000.000</td>
-                            </tr>
                         </tbody>
 
                     </table>

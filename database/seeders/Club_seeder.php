@@ -15,12 +15,24 @@ class Club_seeder extends Seeder
      */
     public function run()
     {
-        DB::table('clubs')->insert([
-            'name' => 'Garuda',
-            'saldo' => 0,
-            'fans' => 0,
-            'created_at' => round(microtime(true) * 1000),
-            'updated_at' => round(microtime(true) * 1000),
-        ]);
+        $clubs = [
+            [
+                'name' => 'Garuda'
+            ],
+            [
+                'name' => 'Banteng'
+            ]
+        ];
+
+
+        foreach ($clubs as $club) {
+            DB::table('clubs')->insert([
+                'name' => $club['name'],
+                'saldo' => 0,
+                'fans' => 0,
+                'created_at' => round(microtime(true) * 1000),
+                'updated_at' => round(microtime(true) * 1000),
+            ]);
+        }
     }
 }
