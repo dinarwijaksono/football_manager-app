@@ -10,4 +10,10 @@ class Home_controller extends Controller
     {
         return "halaman home index";
     }
+
+
+    public function register()
+    {
+        return 'halaman register';
+    }
 }
