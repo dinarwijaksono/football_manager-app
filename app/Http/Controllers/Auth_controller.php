@@ -64,4 +64,19 @@ class Auth_controller extends Controller
 
         return redirect('/Auth/register')->with('registerSuccess', "Username berhasil di daftarkan.");
     }
+
+
+
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/Auth/login');
+    }
 }

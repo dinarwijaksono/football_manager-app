@@ -8,12 +8,6 @@ class Home_controller extends Controller
 {
     public function index()
     {
-        return "halaman home index";
-    }
-
-
-    public function register()
-    {
-        return 'halaman register';
+        return view('/Home/index');
     }
 }

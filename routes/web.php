@@ -26,4 +26,6 @@ Route::post('/Auth/login', [Auth_controller::class, 'doLogin'])->middleware('gue
 
 Route::get('/Auth/register', [Auth_controller::class, 'register'])->middleware('guest');
 Route::post('/Auth/register', [Auth_controller::class, 'doRegister'])->middleware('guest');
+
+Route::post('/Auth/logout', [Auth_controller::class, 'logout'])->middleware('auth');
 /* end auth_controler */
