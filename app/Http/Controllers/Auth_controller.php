@@ -46,7 +46,7 @@ class Auth_controller extends Controller
 
     public function register()
     {
-        return '/Halaman register';
+        return view('Auth/register');
     }
 
 
@@ -54,10 +54,20 @@ class Auth_controller extends Controller
     public function doRegister(Request $request)
     {
         $request->validate([
-            'username' => 'required|min:4|max:50',
+            'username' => 'required|min:4|max:50|unique:users',
             'email' => 'required|unique:users',
             'password' => 'required',
             'password_confirmation' => 'required|same:password'
+        ], [
+            'username.required' => 'Username harus di isi.',
+            'username.min' => 'Username minimal 4 karakter',
+            'username.max' => 'Username maksimal 50 karakter',
+            'username.unique' => 'Username tidak tersedia',
+            'email.required' => 'Email harus di isi.',
+            'email.unique' => 'Email sudah di gunakan.',
+            'password.required' => 'Password harus di isi.',
+            'password_confirmation.required' => 'Konfirmasi password harus di isi.',
+            'password_confirmation.same' => 'Konfirmasi password salah.',
         ]);
 
         $this->user_service->addUser($request->username, $request->email, $request->password);
